@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
+import { UserService } from 'src/app/services/UserService/user.service';
 
 
 
@@ -10,17 +10,23 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
-  email: string  = "n";
-  password: string = "n";
+  email: string  = "";
+  password: string = "";
 
-  constructor(private loginSerivice: LoginService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   login(){
-    this.loginSerivice.loginuser(this.email, this.password).subscribe(result => {
+    this.userService.loginuser(this.email, this.password).subscribe(result => {
       if(result){
-        this.router.navigate(['home']);
+        //this.router.navigate(['home']);
+      }else{
+        alert("Uno o más datos son invalidos");
       }
     });
+  }
+
+  irARegistro(){
+    this.router.navigate(['registro']);
   }
 
 }

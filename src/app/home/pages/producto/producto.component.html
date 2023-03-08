@@ -1,0 +1,46 @@
+<h2>Producto</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <form (ngSubmit)="buscar()" autocomplete="off">
+      <input type="text" name="termino" class="form-control" [(ngModel)]="termino" placeholder="Buscar Producto">
+    </form>
+  </div>
+</div>
+
+<hr>
+
+<div class="alert alert-danger">
+  No se encontro el producto con el termino ingresado
+</div>
+
+<div class="row">
+  <div class="col">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Referencia</th>
+          <th>Categoria</th>
+          <th>Talla</th>
+          <th>Color</th>
+          <th>Genero</th>
+          <th>Marca</th>
+          <th>Precio</th>
+          <th>Descripcín</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <th>Referencia</th>
+        <th>Categoria</th>
+        <th>Talla</th>
+        <th>Color</th>
+        <th>Genero</th>
+        <th>Marca</th>
+        <th>Precio</th>
+        <th>Descripcín</th>
+      </tbody>
+    </table>
+  </div>
+</div>

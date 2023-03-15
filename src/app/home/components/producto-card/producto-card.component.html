@@ -1,0 +1,22 @@
+<div class="cards-container" style="display: flex; flex-direction: row;">
+<div class="row" *ngFor="let producto of productos">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card" style="width: 18rem;" >
+      <img src="../../../../assets/imagenes/imagenesRopa/{{producto.imagen}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{producto.categoria.categoria}}</h5>
+        <p class="card-text">{{producto.categoria.categoria}} de talla {{producto.talla.talla}} color
+          {{producto.color.color}} para {{producto.genero.genero}} de la marca {{producto.marca.marca}}
+          </p>
+        <h2>$ {{producto.precioUnitario}}</h2>
+        <input type="number">
+        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+
+      </div>
+    </div>
+    <!--{{producto.description}}  -->
+
+  </div>
+</div>
+<!-- </div> -->
+

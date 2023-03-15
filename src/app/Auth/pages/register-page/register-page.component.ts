@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/UserService/user.service';
-import { CityService } from 'src/app/services/CitiesService/city.service';
-import { TipoDocumentoService } from 'src/app/services/TipoDocumentoService/tipo-documento.service';
+import { UserService } from 'src/app/Auth/services/UserService/user.service';
+import { CityService } from 'src/app/Auth/services/CitiesService/city.service';
+import { TipoDocumentoService } from 'src/app/Auth/services/TipoDocumentoService/tipo-documento.service';
 
 @Component({
   selector: 'app-register-page',

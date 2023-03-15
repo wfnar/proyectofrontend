@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Producto } from '../interface/producto-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,24 @@ export class ProductoService {
 
   constructor(private http: HttpClient) { }
 
-  buscarProducto(termino: string): Observable<any> {
+  buscarProducto(termino: string): Observable<Producto[]> {
+
+    const url = `${this.apiUrl}/${termino}`;
+    return this.http.get<Producto[]>(url);
+
+  }
+
+  buscarProductoHombre(termino: string): Observable<Producto[]> {
 
     const url = `${this.apiUrl}/hombre/${termino}`;
+    return this.http.get<Producto[]>(url);
 
+  }
 
-    return this.http.get(url);
+  buscarProductoMujer(termino: string): Observable<Producto[]> {
+
+    const url = `${this.apiUrl}/mujer/${termino}`;
+    return this.http.get<Producto[]>(url);
 
   }
 

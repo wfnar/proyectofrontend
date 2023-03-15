@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/UserService/user.service';
+import { UserService } from 'src/app/Auth/services/UserService/user.service';
 
 
 
@@ -12,13 +12,15 @@ import { UserService } from 'src/app/services/UserService/user.service';
 export class LoginPageComponent {
   email: string  = "";
   password: string = "";
+  mostrarlogin: boolean = false;
+  mostrarlogout: boolean = false;
 
   constructor(private userService: UserService, private router: Router) { }
 
   login(){
     this.userService.loginuser(this.email, this.password).subscribe(result => {
       if(result){
-        //this.router.navigate(['home']);
+        this.router.navigate(['home']);
       }else{
         alert("Uno o más datos son invalidos");
       }
@@ -27,6 +29,10 @@ export class LoginPageComponent {
 
   irARegistro(){
     this.router.navigate(['registro']);
+  }
+
+  logout(){
+    this.mostrarlogout= true;
   }
 
 }

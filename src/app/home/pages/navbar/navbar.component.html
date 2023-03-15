@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img src="../../../../assets/imagenes/logo1.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li routerLink="" class="nav-item nav-link" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">Hombre</li>
+        <li routerLink="mujer" class="nav-item nav-link" routerLinkActive="active">Mujer</li>
+        <li routerLink="productos/:id" class="nav-item nav-link" routerLinkActive="active">Producto</li>
+
+      </ul>
+    </div>
+
+    <div>
+      <a  href=""><img src="../../../../assets/imagenes/carritodecompras.png" width="30" height="30" alt=""></a>
+
+      <button class="btn btn-primary" *ngIf="!mostrarlogout" (click)="logout()">Logout</button>
+      <button class="btn btn-primary" *ngIf="!mostrarlogin" (click)="irALogin()">Login</button>
+    </div>
+  </div>
+</nav>
+
+
+
